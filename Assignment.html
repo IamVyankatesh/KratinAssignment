@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KratinAssignment</title>
+    <style>
+
+    </style>
+    <script>
+        function KratinAssignment() {
+  var n = parseInt(document.getElementById("name").value);
+  var w = parseInt(document.getElementById("weight").value);
+  var h = parseInt(document.getElementById("height").value);
+  var a = parseInt(document.getElementById("age").value);
+  var e = parseInt(document.getElementById("exercise").value);
+  var r = parseInt(document.getElementById("result").value);
+
+  var bmi = w / (h/100 * h/100);
+
+  if (bmi < 18.5) {
+    document.getElementById("result").innerHTML +=
+      "Hello " + n + " you are underweight and you need to increase in your weight as per standard BMI calculations. We'll suggest following basic exercises to you. Walking for an mile a day.Push ups, squats, bench dips, lunges, shoulder press as much you can.Also try to have meals 5-4 times a day so you can consume more calories than you need and you'll get in the ideal weight range.";
+  } else if (bmi > 22.5) {
+    document.getElementById("result").innerHTML +=
+      "Hello " + n +" you are at your ideal weight and you need to stay in your weight range as per standard BMI calculations. We'll suggest following basic exercises to you.Walking for an mile a day.Push ups, squats, bench dips, lunges, shoulder press as much you can.Also try to have meals 3-4 times a day with calories count of 1500Kcal so you stay at the ideal weight range. Also continue with your proein intake";
+  } else {
+    document.getElementById("result").innerHTML +=
+      "Hello " + n + " you are overweight and you need to decrease in your weight as per standard BMI calculations. We'll suggest following basic exercises to you.Running for an mile a day. Burpees, Push Ups, Aerobic Exercises, Skipping or Jumping Rope, Yoga, Panks as much you can. Also try to have meals 3 times a day but in small proportion and also add lean proteins in your meal so you will consume less calories than you need and you'll get in the ideal weight range. Please avoid the processed suger products in your meal and also try to over eat at one time.";
+  }
+}
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <form>
+                <hr>
+                <table border="5">
+                    <tbody>
+                        <tr>
+                            <th colspan="2">Live healthy lifestyle with our help</th>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td><input id="name" type="Name" placeholder="Enter Name" required=""></td>
+                        </tr>
+                        <tr>
+                            <td>Weight</td>
+                            <td><input id="weight" type="Number" placeholder="Enter Weight in KG" required=""></td>
+                        </tr>
+                        <tr>
+                        </tr>
+                        <tr>
+                            <td>Height</td>
+                            <td><input id="height" type="Number" placeholder="Enter Height in meter" required=""></td>
+                        </tr>
+                        <tr>
+                            <td>Age</td>
+                            <td><input id="age" type="Number" placeholder="Enter Age" required=""></td>
+                        </tr>
+                        <tr>
+                            <td>Do you Exercise</td>
+                            <td>
+                                <input id="exercise" type="radio" name="topping">Never<br>
+                                <input id="exercise" type="radio" name="topping">Sometimes<br>
+                                <input id="exercise" type="radio" name="topping">Regularly<br>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Gender</td>
+                            <td>
+                                <input id="gender" type="checkbox" name="topping">Male
+                                <input id="gender"type="checkbox" name="topping">Female
+                            </td>
+                        </tr>
+                        <tr>
+                            <td onclick="KratinAssignment()" colspan="2" style="padding-left: 130px;"><button type="submit">Submit</button></td>
+                        </tr>
+                        <br>
+                    </tbody>
+                </table>
+            </form>
+            <span id="result"></span>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
